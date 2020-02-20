@@ -1,6 +1,6 @@
 package Characters;
 
-public class Orc extends Character {
+public class Orc {
 
 
 }

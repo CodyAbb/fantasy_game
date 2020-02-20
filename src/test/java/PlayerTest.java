@@ -1,5 +1,7 @@
 import Characters.Player;
 import Items.IAffectHealthPoints;
+import Items.Protectives.Armour;
+import Items.Protectives.IProtect;
 import Items.Weapons.Weapon;
 import org.junit.Before;
 import org.junit.Test;
@@ -11,6 +13,7 @@ public class PlayerTest {
 
     private Player player;
     private IAffectHealthPoints sword = new Weapon("sword", 20);
+    private IProtect shield = new Armour("shield", 5);
 
     @Before
     public void before(){
@@ -44,5 +47,13 @@ public class PlayerTest {
         player.addToDamageGiverInventory(sword);
         player.equipDamageGiver(0);
         assertEquals(20, player.giveDamage());
+    }
+
+    @Test
+    public void playerCanTakeLessDamageDueToProtective(){
+        player.addToProtectionInventory(shield);
+        player.equipProtective(0);
+        player.takeDamage(20);
+        assertEquals(85, player.getHealthPoints());
     }
 }

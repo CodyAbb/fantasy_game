@@ -1,5 +1,7 @@
 package Characters;
 
+import Items.Item;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -19,5 +21,9 @@ public abstract class Character {
 
     public ArrayList getInventory() {
         return inventory;
+    }
+
+    public void addToInventory(Item item){
+        this.inventory.add(item);
     }
 }

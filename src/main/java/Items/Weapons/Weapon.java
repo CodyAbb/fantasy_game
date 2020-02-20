@@ -16,7 +16,4 @@ public class Weapon implements IAffectHealthPoints {
         return this.affectPoints;
     }
 
-    public void affectHealth() {
-
-    }
 }

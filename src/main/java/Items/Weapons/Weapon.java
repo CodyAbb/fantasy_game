@@ -1,15 +1,19 @@
 package Items.Weapons;
 
 import Items.IAffectHealthPoints;
-import Items.Item;
 
-public class Weapon extends Item implements IAffectHealthPoints {
+public class Weapon implements IAffectHealthPoints {
 
+    private String type;
     private int affectPoints;
 
-    public Weapon(String name, int affectPoints){
-        super(name);
+    public Weapon(String type, int affectPoints){
+        this.type = type;
         this.affectPoints = affectPoints;
+    }
+
+    public int getAffectPoints(){
+        return this.affectPoints;
     }
 
     public void affectHealth() {

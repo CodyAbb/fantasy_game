@@ -1,6 +1,6 @@
 package Characters;
 
-import Items.Item;
+import Items.IAffectHealthPoints;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -23,7 +23,7 @@ public abstract class Character {
         return inventory;
     }
 
-    public void addToInventory(Item item){
-        this.inventory.add(item);
+    public void addToInventory(IAffectHealthPoints damageGiver){
+        this.inventory.add(damageGiver);
     }
 }

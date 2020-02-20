@@ -1,3 +1,6 @@
+import Items.IAffectHealthPoints;
+import Items.Weapons.Weapon;
+
 public class Player {
 
     private String name;
@@ -16,7 +19,7 @@ public class Player {
         return healthPoints;
     }
 
-    public void takeDamage(int damageAmount){
-        this.healthPoints -= damageAmount;
-    }
+//    public void takeDamage(IAffectHealthPoints damageGiver){
+//        this.healthPoints -= .;
+//    }
 }

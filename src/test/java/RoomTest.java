@@ -14,7 +14,6 @@ public class RoomTest {
     public void before(){
         room = new Room();
         player = new Player("Stephen");
-        orc = new Orc();
     }
 
     @Test

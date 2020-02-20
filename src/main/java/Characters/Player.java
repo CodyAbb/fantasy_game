@@ -64,7 +64,9 @@ public class Player implements ICharacter {
     }
 
     public void takeDamage(int damage){
-        damage = equippedProtection.negateDamage(damage);
+        if (equippedProtection != null) {
+            damage = equippedProtection.negateDamage(damage);
+        }
         this.healthPoints -= damage;
     }
 

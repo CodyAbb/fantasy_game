@@ -18,8 +18,8 @@ public class BattleTest {
 
     @Before
     public void before(){
-        player1 = new Player("Luca");
-        player2 = new Player("Jaimie");
+        player1 = new Player("Dave");
+        player2 = new Player("Sam");
         battle = new Battle(player1, player2);
     }
 

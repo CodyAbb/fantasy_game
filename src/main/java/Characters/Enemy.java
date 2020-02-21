@@ -7,12 +7,11 @@ import Items.Weapons.Weapon;
 public abstract class Enemy implements ICharacter {
 
     private int healthPoints;
-    public String type;
     private IAffectHealthPoints equippedWeapon;
     private IProtect equippedProtection;
 
-    public Enemy(String type, int healthPoints, IAffectHealthPoints weapon, IProtect protective){
-        this.type = type;
+    public Enemy( int healthPoints, IAffectHealthPoints weapon, IProtect protective){
+
         this.healthPoints = healthPoints;
         this.equippedWeapon = weapon;
         this.equippedProtection = protective;
@@ -20,10 +19,6 @@ public abstract class Enemy implements ICharacter {
 
     public int getHealthPoints() {
         return healthPoints;
-    }
-
-    public String getType() {
-        return type;
     }
 
     public IAffectHealthPoints getEquippedWeapon() {

@@ -4,19 +4,16 @@ import Characters.Orc;
 import Characters.Player;
 
 public class Battle {
-    private Player player1;
-    private Player player2;
 
-    public Battle(Player player1, Player player2){
-        this.player1 = player1;
-        this.player2 = player2;
+    public Battle(){}
+
+    public void playerTakeTurn(Player player, Enemy enemy){
+        enemy.takeDamage(player.giveDamage());
     }
 
-    public void takeTurn(ICharacter attacker, ICharacter defender){
-        defender.takeDamage(attacker.giveDamage());
+    public void enemyTakeTurn(Enemy enemy, Player player){
+        player.takeDamage(enemy.giveDamage());
     }
 
-    public boolean player1WinsBattle(){
-        return player2.getHealthPoints() <= 0;
-    }
+
 }

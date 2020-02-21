@@ -12,6 +12,7 @@ public class Healing implements IAffectHealthPoints {
     }
 
     public int getAffectPoints() {
-        return -this.affectPoints;
+        return this.affectPoints;
     }
+
 }

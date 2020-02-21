@@ -50,4 +50,9 @@ public class BattleTest {
         battle.enemyTakeTurn(imp, player);
         assertEquals(12, imp.getHealthPoints());
     }
+
+    @Test
+    public void canDecideWhoGoesFirstForBattle(){
+
+    }
 }

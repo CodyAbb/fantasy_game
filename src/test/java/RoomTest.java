@@ -58,6 +58,11 @@ public class RoomTest {
         assertEquals(1, room.getEnemies().size());
     }
 
+    @Test
+    public void canTakeTreasureFromDefeatedEnemyAndGiveToPlayer(){
+        
+    }
+
 
 //      This works but is randomised
 //    @Test

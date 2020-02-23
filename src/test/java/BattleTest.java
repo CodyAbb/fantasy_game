@@ -17,7 +17,7 @@ public class BattleTest {
     private Player player;
     private Enemy imp;
     private IAffectHealthPoints sword = new Weapon("sword", 20);
-    private IAffectHealthPoints axe = new Weapon("axe", 5);
+    private IAffectHealthPoints axe = new Weapon("axe", 10);
     private IProtect basicArmour = new Armour("basicArmour", 2);
     private IProtect shield = new Armour("shield", 5);
     private IAffectHealthPoints healingMantra = new Healing("healingMantra", 10);
@@ -48,11 +48,33 @@ public class BattleTest {
         player.addToProtectionInventory(shield);
         player.equipProtective(0);
         battle.enemyTakeTurn(imp, player);
-        assertEquals(12, imp.getHealthPoints());
+        assertEquals(95, player.getHealthPoints());
+    }
+
+//    @Test
+//    public void canDecideWhoGoesFirstForBattle(){
+//
+//    }
+
+    @Test
+    public void willReturnContinueForBattleStatus(){
+        player.addToDamageGiverInventory(sword);
+        player.equipDamageGiver(0);
+        player.addToProtectionInventory(shield);
+        player.equipProtective(0);
+        assertEquals("continue", battle.playerTakeTurn(player, imp));
     }
 
     @Test
-    public void canDecideWhoGoesFirstForBattle(){
-
+    public void willReturnPlayerWinsAfterBattle(){
+        player.addToDamageGiverInventory(sword);
+        player.equipDamageGiver(0);
+        player.addToProtectionInventory(shield);
+        player.equipProtective(0);
+        battle.playerTakeTurn(player, imp);
+        battle.enemyTakeTurn(imp, player);
+        assertEquals("playerWins", battle.playerTakeTurn(player, imp));
     }
+
+
 }
